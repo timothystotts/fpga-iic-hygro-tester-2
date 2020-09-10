@@ -241,7 +241,8 @@ static void Experiment_UpdateCLSDisplay(t_experiment_data* expData)
 }
 
 /*-----------------------------------------------------------*/
-/* Convert a 4-bit decimal value to a Pmod SSD digit segment on/off value */
+/* Convert a 4-bit decimal value to a Pmod SSD digit segment
+ * on/off bit vector value */
 static u8 Experiment_convertValueToSSD(u8 value) {
 	u8 ret = 0x00;
 
@@ -310,7 +311,8 @@ static void Experiment_updateSSD(t_experiment_data* expData) {
 }
 
 /*-----------------------------------------------------------*/
-/* Helper function to read user inputs at this time. */
+/* Helper function to read user inputs at this time and select
+ * operational and display modes. */
 static void Experiment_readUserInputs(t_experiment_data* expData) {
 	expData->switchesReadPrev = expData->switchesRead;
 	expData->buttonsReadPrev = expData->buttonsRead;
@@ -442,7 +444,7 @@ int main()
 				snprintf(experiData.szInfo2, sizeof(experiData.szInfo2),
 						"Humid: % 3.4f%%", experiData.hum_perrh);
 				Experiment_SetLedUpdate(&experiData, 5, 0, 0, 0);
-				Experiment_SetLedUpdate(&experiData, 6, 0, 200, 200);
+				Experiment_SetLedUpdate(&experiData, 6, 128, 16, 0x00);
 				break;
 			default:
 				strcpy(experiData.szInfo1, "Idle. Press");
