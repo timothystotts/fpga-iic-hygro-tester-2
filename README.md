@@ -32,4 +32,4 @@ two version-controlled projects imported into a workspace that is not version co
 ./HYGRO Sensor Readings Tester - Zynq.pdf
 ```
 
-[HYGRO Sensor Readings Tester info](https://github.com/timothystotts/fpga-iic-hygro-tester-2/blob/master/HYGRO%20Sensor%20Readings%20Tester%20-%20Zynq.pdf)
+[HYGRO Sensor Readings Tester - Zynq - info](https://github.com/timothystotts/fpga-iic-hygro-tester-2/blob/master/HYGRO%20Sensor%20Readings%20Tester%20-%20Zynq.pdf)
