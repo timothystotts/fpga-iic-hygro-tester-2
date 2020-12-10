@@ -1,8 +1,8 @@
-// Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-// Date        : Thu Sep 10 13:37:33 2020
-// Host        : l4study running 64-bit Ubuntu 18.04.5 LTS
+// Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+// Date        : Thu Dec 10 13:18:42 2020
+// Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-iic-hygro-tester-2/HYGRO-Tester-Design-Zynq/IPI-BDs/system_20/ip/system_20_MuxSSD_0_0/system_20_MuxSSD_0_0_sim_netlist.v
 // Design      : system_20_MuxSSD_0_0
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "system_20_MuxSSD_0_0,MuxSSD_v1_0,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "MuxSSD_v1_0,Vivado 2019.1" *) 
+(* CHECK_LICENSE_TYPE = "system_20_MuxSSD_0_0,MuxSSD_v1_0,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "MuxSSD_v1_0,Vivado 2020.2" *) 
 (* NotValidForBitStream *)
 module system_20_MuxSSD_0_0
    (ext_mux_clk,
@@ -428,6 +428,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .D(s_clk_div_ce_i_1_n_0),
         .Q(s_clk_div_ce),
         .R(1'b0));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 s_clk_div_cnt0_carry
        (.CI(1'b0),
         .CO({s_clk_div_cnt0_carry_n_0,s_clk_div_cnt0_carry_n_1,s_clk_div_cnt0_carry_n_2,s_clk_div_cnt0_carry_n_3}),
@@ -435,6 +436,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(data0[4:1]),
         .S(sel0[4:1]));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 s_clk_div_cnt0_carry__0
        (.CI(s_clk_div_cnt0_carry_n_0),
         .CO({s_clk_div_cnt0_carry__0_n_0,s_clk_div_cnt0_carry__0_n_1,s_clk_div_cnt0_carry__0_n_2,s_clk_div_cnt0_carry__0_n_3}),
@@ -442,6 +444,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(data0[8:5]),
         .S(sel0[8:5]));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 s_clk_div_cnt0_carry__1
        (.CI(s_clk_div_cnt0_carry__0_n_0),
         .CO({s_clk_div_cnt0_carry__1_n_0,s_clk_div_cnt0_carry__1_n_1,s_clk_div_cnt0_carry__1_n_2,s_clk_div_cnt0_carry__1_n_3}),
@@ -449,6 +452,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(data0[12:9]),
         .S(sel0[12:9]));
+  (* ADDER_THRESHOLD = "35" *) 
   CARRY4 s_clk_div_cnt0_carry__2
        (.CI(s_clk_div_cnt0_carry__1_n_0),
         .CO({NLW_s_clk_div_cnt0_carry__2_CO_UNCONNECTED[3],s_clk_div_cnt0_carry__2_n_1,s_clk_div_cnt0_carry__2_n_2,s_clk_div_cnt0_carry__2_n_3}),
@@ -750,7 +754,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .I1(ssd_mux_o),
         .I2(reg_left_digit[0]),
         .O(\s_curr_disp[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \s_curr_disp[1]_i_1 
@@ -758,7 +762,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .I1(ssd_mux_o),
         .I2(reg_left_digit[1]),
         .O(\s_curr_disp[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \s_curr_disp[2]_i_1 
@@ -766,7 +770,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .I1(ssd_mux_o),
         .I2(reg_left_digit[2]),
         .O(\s_curr_disp[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \s_curr_disp[3]_i_1 
@@ -782,7 +786,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .I1(ssd_mux_o),
         .I2(reg_left_digit[4]),
         .O(\s_curr_disp[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \s_curr_disp[5]_i_1 
@@ -2536,12 +2540,15 @@ module glbl ();
 
     parameter ROC_WIDTH = 100000;
     parameter TOC_WIDTH = 0;
+    parameter GRES_WIDTH = 10000;
+    parameter GRES_START = 10000;
 
 //--------   STARTUP Globals --------------
     wire GSR;
     wire GTS;
     wire GWE;
     wire PRLD;
+    wire GRESTORE;
     tri1 p_up_tmp;
     tri (weak1, strong0) PLL_LOCKG = p_up_tmp;
 
@@ -2554,6 +2561,7 @@ module glbl ();
     reg GSR_int;
     reg GTS_int;
     reg PRLD_int;
+    reg GRESTORE_int;
 
 //--------   JTAG Globals --------------
     wire JTAG_TDO_GLBL;
@@ -2581,6 +2589,7 @@ module glbl ();
     assign (strong1, weak0) GSR = GSR_int;
     assign (strong1, weak0) GTS = GTS_int;
     assign (weak1, weak0) PRLD = PRLD_int;
+    assign (strong1, weak0) GRESTORE = GRESTORE_int;
 
     initial begin
 	GSR_int = 1'b1;
@@ -2594,6 +2603,14 @@ module glbl ();
 	GTS_int = 1'b1;
 	#(TOC_WIDTH)
 	GTS_int = 1'b0;
+    end
+
+    initial begin 
+	GRESTORE_int = 1'b0;
+	#(GRES_START);
+	GRESTORE_int = 1'b1;
+	#(GRES_WIDTH);
+	GRESTORE_int = 1'b0;
     end
 
 endmodule

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Root MajorVersion="0" MinorVersion="37">
+<Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="system_20" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1599759348"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1599759348"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1599759348"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1599759348"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1607624200"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1607624200"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1607624200"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1607624200"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/system_20_processing_system7_0_0/system_20_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -39,14 +39,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/system_20_xbar_0/system_20_xbar_0.xci" Type="IP">
-        <Instance HierarchyPath="ps7_0_axi_periph/xbar"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip/system_20_ps7_0_axi_periph_0/system_20_ps7_0_axi_periph_0.xci" Type="IP">
         <Instance HierarchyPath="ps7_0_axi_periph"/>
         <Properties IsEditable="false" IsVisible="false" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -71,15 +63,23 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/system_20_PmodCLS_0_0/system_20_PmodCLS_0_0.xci" Type="IP">
-        <Instance HierarchyPath="PmodCLS_0"/>
+      <File Name="ip/system_20_xlconcat_0_0/system_20_xlconcat_0_0.xci" Type="IP">
+        <Instance HierarchyPath="xlconcat_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/system_20_PmodHYGRO_0_0/system_20_PmodHYGRO_0_0.xci" Type="IP">
+      <File Name="ip/system_20_xbar_0/system_20_xbar_0.xci" Type="IP">
+        <Instance HierarchyPath="ps7_0_axi_periph/xbar"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/system_20_PmodHYGRO_0_1/system_20_PmodHYGRO_0_1.xci" Type="IP">
         <Instance HierarchyPath="PmodHYGRO_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -87,8 +87,8 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/system_20_xlconcat_0_0/system_20_xlconcat_0_0.xci" Type="IP">
-        <Instance HierarchyPath="xlconcat_0"/>
+      <File Name="ip/system_20_PmodCLS_0_1/system_20_PmodCLS_0_1.xci" Type="IP">
+        <Instance HierarchyPath="PmodCLS_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -121,6 +121,11 @@
         <UsedIn Val="OUT_OF_CONTEXT"/>
       </File>
       <File Name="hw_handoff/system_20.hwh" Type="HwHandoff">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="system_20.bda">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>

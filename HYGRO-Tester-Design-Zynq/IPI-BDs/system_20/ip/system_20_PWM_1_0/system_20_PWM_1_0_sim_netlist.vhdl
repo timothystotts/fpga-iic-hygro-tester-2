@@ -1,8 +1,8 @@
--- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
--- Date        : Thu Sep 10 13:36:26 2020
--- Host        : l4study running 64-bit Ubuntu 18.04.5 LTS
+-- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+-- Date        : Thu Dec 10 13:18:03 2020
+-- Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-iic-hygro-tester-2/HYGRO-Tester-Design-Zynq/IPI-BDs/system_20/ip/system_20_PWM_1_0/system_20_PWM_1_0_sim_netlist.vhdl
 -- Design      : system_20_PWM_1_0
@@ -4676,6 +4676,36 @@ architecture STRUCTURE of system_20_PWM_1_0_PWM_v2_0 is
   signal \NLW_pwm1_inferred__2/i__carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_pwm1_inferred__2/i__carry__1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_pwm1_inferred__2/i__carry__2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  attribute COMPARATOR_THRESHOLD : integer;
+  attribute COMPARATOR_THRESHOLD of count1_carry : label is 11;
+  attribute COMPARATOR_THRESHOLD of \count1_carry__0\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \count1_carry__1\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \count1_carry__2\ : label is 11;
+  attribute ADDER_THRESHOLD : integer;
+  attribute ADDER_THRESHOLD of \count_reg[0]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \count_reg[12]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \count_reg[16]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \count_reg[20]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \count_reg[24]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \count_reg[28]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \count_reg[4]_i_1\ : label is 11;
+  attribute ADDER_THRESHOLD of \count_reg[8]_i_1\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of pwm1_carry : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_carry__0\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_carry__1\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_carry__2\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__0/i__carry\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__0/i__carry__0\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__0/i__carry__1\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__0/i__carry__2\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__1/i__carry\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__1/i__carry__0\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__1/i__carry__1\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__1/i__carry__2\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__2/i__carry\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__2/i__carry__0\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__2/i__carry__1\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \pwm1_inferred__2/i__carry__2\ : label is 11;
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \pwm[0]_INST_0\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \pwm[1]_INST_0\ : label is "soft_lutpair1";
@@ -8778,7 +8808,7 @@ entity system_20_PWM_1_0 is
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of system_20_PWM_1_0 : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of system_20_PWM_1_0 : entity is "PWM_v2_0,Vivado 2019.1";
+  attribute X_CORE_INFO of system_20_PWM_1_0 : entity is "PWM_v2_0,Vivado 2020.2";
 end system_20_PWM_1_0;
 
 architecture STRUCTURE of system_20_PWM_1_0 is
@@ -8786,7 +8816,7 @@ architecture STRUCTURE of system_20_PWM_1_0 is
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of pwm_axi_aclk : signal is "xilinx.com:signal:clock:1.0 PWM_AXI_CLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of pwm_axi_aclk : signal is "XIL_INTERFACENAME PWM_AXI_CLK, ASSOCIATED_BUSIF PWM_AXI, ASSOCIATED_RESET pwm_axi_aresetn, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of pwm_axi_aclk : signal is "XIL_INTERFACENAME PWM_AXI_CLK, ASSOCIATED_BUSIF PWM_AXI, ASSOCIATED_RESET pwm_axi_aresetn, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0";
   attribute X_INTERFACE_INFO of pwm_axi_aresetn : signal is "xilinx.com:signal:reset:1.0 PWM_AXI_RST RST";
   attribute X_INTERFACE_PARAMETER of pwm_axi_aresetn : signal is "XIL_INTERFACENAME PWM_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of pwm_axi_arready : signal is "xilinx.com:interface:aximm:1.0 PWM_AXI ARREADY";

@@ -50,7 +50,7 @@
 // IP VLNV: digilentinc.com:IP:PWM:2.0
 // IP Revision: 11
 
-(* X_CORE_INFO = "PWM_v2_0,Vivado 2019.1" *)
+(* X_CORE_INFO = "PWM_v2_0,Vivado 2020.2" *)
 (* CHECK_LICENSE_TYPE = "system_20_PWM_1_0,PWM_v2_0,{}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module system_20_PWM_1_0 (
@@ -119,7 +119,7 @@ output wire pwm_axi_rvalid;
 tem7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 PWM_AXI RREADY" *)
 input wire pwm_axi_rready;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME PWM_AXI_CLK, ASSOCIATED_BUSIF PWM_AXI, ASSOCIATED_RESET pwm_axi_aresetn, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME PWM_AXI_CLK, ASSOCIATED_BUSIF PWM_AXI, ASSOCIATED_RESET pwm_axi_aresetn, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0, FREQ_TOLERANCE_HZ 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 PWM_AXI_CLK CLK" *)
 input wire pwm_axi_aclk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME PWM_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)

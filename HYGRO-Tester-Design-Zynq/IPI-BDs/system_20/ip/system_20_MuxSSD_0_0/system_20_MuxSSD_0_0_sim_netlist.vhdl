@@ -1,8 +1,8 @@
--- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
--- Date        : Thu Sep 10 13:37:33 2020
--- Host        : l4study running 64-bit Ubuntu 18.04.5 LTS
+-- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
+-- Date        : Thu Dec 10 13:18:42 2020
+-- Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-iic-hygro-tester-2/HYGRO-Tester-Design-Zynq/IPI-BDs/system_20/ip/system_20_MuxSSD_0_0/system_20_MuxSSD_0_0_sim_netlist.vhdl
 -- Design      : system_20_MuxSSD_0_0
@@ -2266,15 +2266,20 @@ architecture STRUCTURE of system_20_MuxSSD_0_0_MuxSSD_v1_0 is
   signal slv_reg1 : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal \^ssd_mux_o\ : STD_LOGIC;
   signal \NLW_s_clk_div_cnt0_carry__2_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
+  attribute ADDER_THRESHOLD : integer;
+  attribute ADDER_THRESHOLD of s_clk_div_cnt0_carry : label is 35;
+  attribute ADDER_THRESHOLD of \s_clk_div_cnt0_carry__0\ : label is 35;
+  attribute ADDER_THRESHOLD of \s_clk_div_cnt0_carry__1\ : label is 35;
+  attribute ADDER_THRESHOLD of \s_clk_div_cnt0_carry__2\ : label is 35;
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \s_clk_div_cnt[0]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \s_clk_div_cnt[16]_i_3\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \s_curr_disp[0]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \s_curr_disp[1]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \s_curr_disp[2]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \s_curr_disp[3]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \s_curr_disp[1]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \s_curr_disp[2]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \s_curr_disp[3]_i_1\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \s_curr_disp[4]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \s_curr_disp[5]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \s_curr_disp[5]_i_1\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of \s_curr_disp[6]_i_1\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of s_curr_sel_i_1 : label is "soft_lutpair6";
 begin
@@ -3156,7 +3161,7 @@ entity system_20_MuxSSD_0_0 is
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of system_20_MuxSSD_0_0 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of system_20_MuxSSD_0_0 : entity is "MuxSSD_v1_0,Vivado 2019.1";
+  attribute x_core_info of system_20_MuxSSD_0_0 : entity is "MuxSSD_v1_0,Vivado 2020.2";
 end system_20_MuxSSD_0_0;
 
 architecture STRUCTURE of system_20_MuxSSD_0_0 is
