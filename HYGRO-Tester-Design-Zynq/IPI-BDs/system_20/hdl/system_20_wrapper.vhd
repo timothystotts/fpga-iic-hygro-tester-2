@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
---Date        : Thu Dec 10 13:16:24 2020
---Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
+--Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+--Date        : Thu Dec 10 19:06:36 2020
+--Host        : J1STUDY running 64-bit major release  (build 9200)
 --Command     : generate_target system_20_wrapper.bd
 --Design      : system_20_wrapper
 --Purpose     : IP block netlist
@@ -64,6 +64,30 @@ architecture STRUCTURE of system_20_wrapper is
   port (
     ld56_rgb : out STD_LOGIC_VECTOR ( 5 downto 0 );
     ld0123_basic : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    jc_pin1_o : out STD_LOGIC;
+    jc_pin7_i : in STD_LOGIC;
+    jc_pin2_o : out STD_LOGIC;
+    jc_pin8_i : in STD_LOGIC;
+    jc_pin3_o : out STD_LOGIC;
+    jc_pin9_i : in STD_LOGIC;
+    jc_pin10_o : out STD_LOGIC;
+    jc_pin4_o : out STD_LOGIC;
+    jc_pin3_i : in STD_LOGIC;
+    jc_pin4_i : in STD_LOGIC;
+    jc_pin1_i : in STD_LOGIC;
+    jc_pin2_i : in STD_LOGIC;
+    jc_pin10_t : out STD_LOGIC;
+    jc_pin8_t : out STD_LOGIC;
+    jc_pin9_t : out STD_LOGIC;
+    jc_pin4_t : out STD_LOGIC;
+    jc_pin9_o : out STD_LOGIC;
+    jc_pin10_i : in STD_LOGIC;
+    jc_pin7_t : out STD_LOGIC;
+    jc_pin1_t : out STD_LOGIC;
+    jc_pin2_t : out STD_LOGIC;
+    jc_pin7_o : out STD_LOGIC;
+    jc_pin3_t : out STD_LOGIC;
+    jc_pin8_o : out STD_LOGIC;
     seg_gpio_je_tri_o : out STD_LOGIC_VECTOR ( 6 downto 0 );
     btns_4bits_tri_i : in STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_cas_n : inout STD_LOGIC;
@@ -89,30 +113,6 @@ architecture STRUCTURE of system_20_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     ssd_mux_je_tri_o : out STD_LOGIC;
-    jc_pin1_o : out STD_LOGIC;
-    jc_pin7_i : in STD_LOGIC;
-    jc_pin2_o : out STD_LOGIC;
-    jc_pin8_i : in STD_LOGIC;
-    jc_pin3_o : out STD_LOGIC;
-    jc_pin9_i : in STD_LOGIC;
-    jc_pin10_o : out STD_LOGIC;
-    jc_pin4_o : out STD_LOGIC;
-    jc_pin3_i : in STD_LOGIC;
-    jc_pin4_i : in STD_LOGIC;
-    jc_pin1_i : in STD_LOGIC;
-    jc_pin2_i : in STD_LOGIC;
-    jc_pin10_t : out STD_LOGIC;
-    jc_pin8_t : out STD_LOGIC;
-    jc_pin9_t : out STD_LOGIC;
-    jc_pin4_t : out STD_LOGIC;
-    jc_pin9_o : out STD_LOGIC;
-    jc_pin10_i : in STD_LOGIC;
-    jc_pin7_t : out STD_LOGIC;
-    jc_pin1_t : out STD_LOGIC;
-    jc_pin2_t : out STD_LOGIC;
-    jc_pin7_o : out STD_LOGIC;
-    jc_pin3_t : out STD_LOGIC;
-    jc_pin8_o : out STD_LOGIC;
     jb_pin1_o : out STD_LOGIC;
     jb_pin7_i : in STD_LOGIC;
     jb_pin2_o : out STD_LOGIC;

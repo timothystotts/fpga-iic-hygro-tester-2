@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Thu Dec 10 13:45:23 2020
-| Host         : l2study running 64-bit Ubuntu 18.04.5 LTS
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Thu Dec 10 19:17:02 2020
+| Host         : J1STUDY running 64-bit major release  (build 9200)
 | Command      : report_methodology -file system_20_wrapper_methodology_drc_routed.rpt -pb system_20_wrapper_methodology_drc_routed.pb -rpx system_20_wrapper_methodology_drc_routed.rpx
 | Design       : system_20_wrapper
 | Device       : xc7z020clg400-1
@@ -35,7 +35,7 @@ Table of Contents
 -----------------
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell system_20_i/PmodCLS_0/inst/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.RX_FIFO_RST_AX2S_1/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to in site SLICE_X58Y64 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell system_20_i/PmodCLS_0/inst/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.RX_FIFO_RST_AX2S_1_CDC_1 is not placed in the same (SLICE) site.
+The FDRE cell system_20_i/PmodCLS_0/inst/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.RX_FIFO_RST_AX2S_1/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to in site SLICE_X45Y77 is part of a synchronized register chain that is suboptimally placed as the load FDRE cell system_20_i/PmodCLS_0/inst/axi_quad_spi_0/U0/NO_DUAL_QUAD_MODE.QSPI_NORMAL/QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/FIFO_EXISTS.CLK_CROSS_I/LOGIC_GENERATION_CDC.RX_FIFO_RST_AX2S_1_CDC_1 is not placed in the same (SLICE) site.
 Related violations: <none>
 
 TIMING-18#1 Warning

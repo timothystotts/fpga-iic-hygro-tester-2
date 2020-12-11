@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Thu Dec 10 13:19:34 2020
--- Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
+-- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+-- Date        : Thu Dec 10 19:11:15 2020
+-- Host        : J1STUDY running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-iic-hygro-tester-2/HYGRO-Tester-Design-Zynq/IPI-BDs/system_20/ip/system_20_PmodHYGRO_0_1/system_20_PmodHYGRO_0_1_sim_netlist.vhdl
+--               w:/wa/fpga-iic-hygro-tester-2/HYGRO-Tester-Design-Zynq/IPI-BDs/system_20/ip/system_20_PmodHYGRO_0_1/system_20_PmodHYGRO_0_1_sim_netlist.vhdl
 -- Design      : system_20_PmodHYGRO_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20845,7 +20845,8 @@ architecture STRUCTURE of system_20_PmodHYGRO_0_1 is
   attribute X_INTERFACE_INFO of AXI_LITE_IIC_wready : signal is "xilinx.com:interface:aximm:1.0 AXI_LITE_IIC WREADY";
   attribute X_INTERFACE_INFO of AXI_LITE_IIC_wvalid : signal is "xilinx.com:interface:aximm:1.0 AXI_LITE_IIC WVALID";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of AXI_LITE_IIC_wvalid : signal is "XIL_INTERFACENAME AXI_LITE_IIC, PROTOCOL AXI4LITE, ADDR_WIDTH 12, ID_WIDTH 0, DATA_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, READ_WRITE_MODE READ_WRITE, FREQ_HZ 50000000, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of AXI_LITE_IIC_wvalid : signal is "XIL_INTERFACENAME AXI_LITE_IIC, PROTOCOL AXI4LITE, ADDR_WIDTH 12, ID_WIDTH 0, DATA_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, READ_WRITE_MODE READ_WRITE, FREQ_HZ 50000000, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, NUM_READ" & LF &
+ "_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of AXI_LITE_TMR_arready : signal is "xilinx.com:interface:aximm:1.0 AXI_LITE_TMR ARREADY";
   attribute X_INTERFACE_INFO of AXI_LITE_TMR_arvalid : signal is "xilinx.com:interface:aximm:1.0 AXI_LITE_TMR ARVALID";
   attribute X_INTERFACE_INFO of AXI_LITE_TMR_awready : signal is "xilinx.com:interface:aximm:1.0 AXI_LITE_TMR AWREADY";
@@ -20856,7 +20857,8 @@ architecture STRUCTURE of system_20_PmodHYGRO_0_1 is
   attribute X_INTERFACE_INFO of AXI_LITE_TMR_rvalid : signal is "xilinx.com:interface:aximm:1.0 AXI_LITE_TMR RVALID";
   attribute X_INTERFACE_INFO of AXI_LITE_TMR_wready : signal is "xilinx.com:interface:aximm:1.0 AXI_LITE_TMR WREADY";
   attribute X_INTERFACE_INFO of AXI_LITE_TMR_wvalid : signal is "xilinx.com:interface:aximm:1.0 AXI_LITE_TMR WVALID";
-  attribute X_INTERFACE_PARAMETER of AXI_LITE_TMR_wvalid : signal is "XIL_INTERFACENAME AXI_LITE_TMR, DATA_WIDTH 32, PROTOCOL AXI4LITE, ID_WIDTH 0, ADDR_WIDTH 12, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, BUSER_WIDTH 0, RUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, FREQ_HZ 50000000, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
+  attribute X_INTERFACE_PARAMETER of AXI_LITE_TMR_wvalid : signal is "XIL_INTERFACENAME AXI_LITE_TMR, DATA_WIDTH 32, PROTOCOL AXI4LITE, ID_WIDTH 0, ADDR_WIDTH 12, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, BUSER_WIDTH 0, RUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, NUM_READ_OUTSTANDING 1, NUM_WRITE_OUTSTANDING 1, FREQ_HZ 50000000, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, NUM_READ" & LF &
+ "_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   attribute X_INTERFACE_INFO of I2C_Interrupt : signal is "xilinx.com:signal:interrupt:1.0 INTR.I2C_INTERRUPT INTERRUPT, xilinx.com:signal:interrupt:1.0 I2C_Interrupt INTERRUPT";
   attribute X_INTERFACE_PARAMETER of I2C_Interrupt : signal is "XIL_INTERFACENAME INTR.I2C_INTERRUPT, SENSITIVITY LEVEL_HIGH, PortWidth 1, XIL_INTERFACENAME I2C_Interrupt, SENSITIVITY LEVEL_HIGH, PortWidth 1";
   attribute X_INTERFACE_INFO of Pmod_out_pin10_i : signal is "digilentinc.com:interface:pmod:1.0 Pmod_out PIN10_I";

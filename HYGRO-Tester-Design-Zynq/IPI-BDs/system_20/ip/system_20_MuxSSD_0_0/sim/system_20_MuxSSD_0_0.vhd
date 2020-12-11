@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: timothystotts.github.io:user:MuxSSD:1.0
--- IP Revision: 10
+-- IP Revision: 11
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -59,6 +59,8 @@ ENTITY system_20_MuxSSD_0_0 IS
     ext_mux_rst : IN STD_LOGIC;
     ssd_seg_o : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
     ssd_mux_o : OUT STD_LOGIC;
+    s00_axi_aclk : IN STD_LOGIC;
+    s00_axi_aresetn : IN STD_LOGIC;
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
@@ -77,9 +79,7 @@ ENTITY system_20_MuxSSD_0_0 IS
     s00_axi_rdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     s00_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s00_axi_rvalid : OUT STD_LOGIC;
-    s00_axi_rready : IN STD_LOGIC;
-    s00_axi_aclk : IN STD_LOGIC;
-    s00_axi_aresetn : IN STD_LOGIC
+    s00_axi_rready : IN STD_LOGIC
   );
 END system_20_MuxSSD_0_0;
 
@@ -97,6 +97,8 @@ ARCHITECTURE system_20_MuxSSD_0_0_arch OF system_20_MuxSSD_0_0 IS
       ext_mux_rst : IN STD_LOGIC;
       ssd_seg_o : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
       ssd_mux_o : OUT STD_LOGIC;
+      s00_axi_aclk : IN STD_LOGIC;
+      s00_axi_aresetn : IN STD_LOGIC;
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
@@ -115,17 +117,11 @@ ARCHITECTURE system_20_MuxSSD_0_0_arch OF system_20_MuxSSD_0_0 IS
       s00_axi_rdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       s00_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s00_axi_rvalid : OUT STD_LOGIC;
-      s00_axi_rready : IN STD_LOGIC;
-      s00_axi_aclk : IN STD_LOGIC;
-      s00_axi_aresetn : IN STD_LOGIC
+      s00_axi_rready : IN STD_LOGIC
     );
   END COMPONENT MuxSSD_v1_0;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_aresetn: SIGNAL IS "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF s00_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 S00_AXI_RST RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_aclk: SIGNAL IS "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
-  ATTRIBUTE X_INTERFACE_INFO OF s00_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_rready: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI RREADY";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_rvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI RVALID";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_rresp: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI RRESP";
@@ -147,24 +143,30 @@ ARCHITECTURE system_20_MuxSSD_0_0_arch OF system_20_MuxSSD_0_0 IS
   ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_awaddr: SIGNAL IS "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_20_processing_sys" & 
 "tem7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_aresetn: SIGNAL IS "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF s00_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 S00_AXI_RST RST";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF s00_axi_aclk: SIGNAL IS "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_INFO OF s00_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK";
   ATTRIBUTE X_INTERFACE_INFO OF ssd_mux_o: SIGNAL IS "xilinx.com:interface:gpio:1.0 ssd_mux TRI_O";
   ATTRIBUTE X_INTERFACE_INFO OF ssd_seg_o: SIGNAL IS "xilinx.com:interface:gpio:1.0 seg_gpio TRI_O";
   ATTRIBUTE X_INTERFACE_PARAMETER OF ext_mux_rst: SIGNAL IS "XIL_INTERFACENAME ext_mux_rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF ext_mux_rst: SIGNAL IS "xilinx.com:signal:reset:1.0 ext_mux_rst RST";
-  ATTRIBUTE X_INTERFACE_PARAMETER OF ext_mux_clk: SIGNAL IS "XIL_INTERFACENAME ext_mux_clk, ASSOCIATED_BUSIF seg_gpio:ssd_mux, ASSOCIATED_RESET ext_mux_rst, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
+  ATTRIBUTE X_INTERFACE_PARAMETER OF ext_mux_clk: SIGNAL IS "XIL_INTERFACENAME ext_mux_clk, ASSOCIATED_BUSIF seg_gpio:ssd_mux, ASSOCIATED_RESET ext_mux_rst, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF ext_mux_clk: SIGNAL IS "xilinx.com:signal:clock:1.0 ext_mux_clk CLK";
 BEGIN
   U0 : MuxSSD_v1_0
     GENERIC MAP (
       C_S00_AXI_DATA_WIDTH => 32,
       C_S00_AXI_ADDR_WIDTH => 4,
-      C_SSD_CLK_RATIO => 100000
+      C_SSD_CLK_RATIO => 500000
     )
     PORT MAP (
       ext_mux_clk => ext_mux_clk,
       ext_mux_rst => ext_mux_rst,
       ssd_seg_o => ssd_seg_o,
       ssd_mux_o => ssd_mux_o,
+      s00_axi_aclk => s00_axi_aclk,
+      s00_axi_aresetn => s00_axi_aresetn,
       s00_axi_awaddr => s00_axi_awaddr,
       s00_axi_awprot => s00_axi_awprot,
       s00_axi_awvalid => s00_axi_awvalid,
@@ -183,8 +185,6 @@ BEGIN
       s00_axi_rdata => s00_axi_rdata,
       s00_axi_rresp => s00_axi_rresp,
       s00_axi_rvalid => s00_axi_rvalid,
-      s00_axi_rready => s00_axi_rready,
-      s00_axi_aclk => s00_axi_aclk,
-      s00_axi_aresetn => s00_axi_aresetn
+      s00_axi_rready => s00_axi_rready
     );
 END system_20_MuxSSD_0_0_arch;

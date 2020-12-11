@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Thu Dec 10 13:17:22 2020
--- Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
+-- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+-- Date        : Thu Dec 10 19:07:46 2020
+-- Host        : J1STUDY running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-iic-hygro-tester-2/HYGRO-Tester-Design-Zynq/IPI-BDs/system_20/ip/system_20_processing_system7_0_0/system_20_processing_system7_0_0_stub.vhdl
+--               w:/wa/fpga-iic-hygro-tester-2/HYGRO-Tester-Design-Zynq/IPI-BDs/system_20/ip/system_20_processing_system7_0_0/system_20_processing_system7_0_0_stub.vhdl
 -- Design      : system_20_processing_system7_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1

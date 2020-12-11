@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Thu Dec 10 13:18:42 2020
-// Host        : l2study running 64-bit Ubuntu 18.04.5 LTS
+// Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+// Date        : Thu Dec 10 19:12:11 2020
+// Host        : J1STUDY running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               /home/timothystotts/Workareas/GitHub/timothystotts/fpga-iic-hygro-tester-2/HYGRO-Tester-Design-Zynq/IPI-BDs/system_20/ip/system_20_MuxSSD_0_0/system_20_MuxSSD_0_0_sim_netlist.v
+//               w:/wa/fpga-iic-hygro-tester-2/HYGRO-Tester-Design-Zynq/IPI-BDs/system_20/ip/system_20_MuxSSD_0_0/system_20_MuxSSD_0_0_sim_netlist.v
 // Design      : system_20_MuxSSD_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,6 +19,8 @@ module system_20_MuxSSD_0_0
     ext_mux_rst,
     ssd_seg_o,
     ssd_mux_o,
+    s00_axi_aclk,
+    s00_axi_aresetn,
     s00_axi_awaddr,
     s00_axi_awprot,
     s00_axi_awvalid,
@@ -37,13 +39,13 @@ module system_20_MuxSSD_0_0
     s00_axi_rdata,
     s00_axi_rresp,
     s00_axi_rvalid,
-    s00_axi_rready,
-    s00_axi_aclk,
-    s00_axi_aresetn);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 ext_mux_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME ext_mux_clk, ASSOCIATED_BUSIF seg_gpio:ssd_mux, ASSOCIATED_RESET ext_mux_rst, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input ext_mux_clk;
+    s00_axi_rready);
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 ext_mux_clk CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME ext_mux_clk, ASSOCIATED_BUSIF seg_gpio:ssd_mux, ASSOCIATED_RESET ext_mux_rst, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input ext_mux_clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 ext_mux_rst RST" *) (* x_interface_parameter = "XIL_INTERFACENAME ext_mux_rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *) input ext_mux_rst;
   (* x_interface_info = "xilinx.com:interface:gpio:1.0 seg_gpio TRI_O" *) output [6:0]ssd_seg_o;
   (* x_interface_info = "xilinx.com:interface:gpio:1.0 ssd_mux TRI_O" *) output ssd_mux_o;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s00_axi_aclk;
+  (* x_interface_info = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *) (* x_interface_parameter = "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s00_axi_aresetn;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR" *) (* x_interface_parameter = "XIL_INTERFACENAME S00_AXI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 50000000, ID_WIDTH 0, ADDR_WIDTH 4, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input [3:0]s00_axi_awaddr;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT" *) input [2:0]s00_axi_awprot;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID" *) input s00_axi_awvalid;
@@ -63,8 +65,6 @@ module system_20_MuxSSD_0_0
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI RRESP" *) output [1:0]s00_axi_rresp;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI RVALID" *) output s00_axi_rvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 S00_AXI RREADY" *) input s00_axi_rready;
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME S00_AXI_CLK, ASSOCIATED_BUSIF S00_AXI, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN system_20_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s00_axi_aclk;
-  (* x_interface_info = "xilinx.com:signal:reset:1.0 S00_AXI_RST RST" *) (* x_interface_parameter = "XIL_INTERFACENAME S00_AXI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s00_axi_aresetn;
 
   wire \<const0> ;
   wire ext_mux_clk;
@@ -164,7 +164,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
   input s00_axi_bready;
   input s00_axi_rready;
 
-  wire [16:1]data0;
+  wire [18:1]data0;
   wire ext_mux_clk;
   wire ext_mux_rst;
   wire [6:0]reg_left_digit;
@@ -190,7 +190,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
   wire s00_axi_wvalid;
   wire s_clk_div_ce;
   wire s_clk_div_ce_i_1_n_0;
-  wire [16:0]s_clk_div_cnt;
+  wire [18:0]s_clk_div_cnt;
   wire s_clk_div_cnt0_carry__0_n_0;
   wire s_clk_div_cnt0_carry__0_n_1;
   wire s_clk_div_cnt0_carry__0_n_2;
@@ -199,17 +199,20 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
   wire s_clk_div_cnt0_carry__1_n_1;
   wire s_clk_div_cnt0_carry__1_n_2;
   wire s_clk_div_cnt0_carry__1_n_3;
+  wire s_clk_div_cnt0_carry__2_n_0;
   wire s_clk_div_cnt0_carry__2_n_1;
   wire s_clk_div_cnt0_carry__2_n_2;
   wire s_clk_div_cnt0_carry__2_n_3;
+  wire s_clk_div_cnt0_carry__3_n_3;
   wire s_clk_div_cnt0_carry_n_0;
   wire s_clk_div_cnt0_carry_n_1;
   wire s_clk_div_cnt0_carry_n_2;
   wire s_clk_div_cnt0_carry_n_3;
-  wire \s_clk_div_cnt[16]_i_2_n_0 ;
-  wire \s_clk_div_cnt[16]_i_3_n_0 ;
-  wire \s_clk_div_cnt[16]_i_4_n_0 ;
-  wire \s_clk_div_cnt[16]_i_5_n_0 ;
+  wire \s_clk_div_cnt[18]_i_2_n_0 ;
+  wire \s_clk_div_cnt[18]_i_3_n_0 ;
+  wire \s_clk_div_cnt[18]_i_4_n_0 ;
+  wire \s_clk_div_cnt[18]_i_5_n_0 ;
+  wire \s_clk_div_cnt[18]_i_6_n_0 ;
   wire \s_curr_disp[0]_i_1_n_0 ;
   wire \s_curr_disp[1]_i_1_n_0 ;
   wire \s_curr_disp[2]_i_1_n_0 ;
@@ -218,12 +221,13 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
   wire \s_curr_disp[5]_i_1_n_0 ;
   wire \s_curr_disp[6]_i_1_n_0 ;
   wire s_curr_sel_i_1_n_0;
-  wire [16:0]sel0;
+  wire [18:0]sel0;
   wire [6:0]slv_reg0;
   wire [6:0]slv_reg1;
   wire ssd_mux_o;
   wire [6:0]ssd_seg_o;
-  wire [3:3]NLW_s_clk_div_cnt0_carry__2_CO_UNCONNECTED;
+  wire [3:1]NLW_s_clk_div_cnt0_carry__3_CO_UNCONNECTED;
+  wire [3:2]NLW_s_clk_div_cnt0_carry__3_O_UNCONNECTED;
 
   system_20_MuxSSD_0_0_MuxSSD_v1_0_S00_AXI MuxSSD_v1_0_S00_AXI_inst
        (.Q(slv_reg1),
@@ -413,14 +417,15 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .D(reg_right_digit_meta1[6]),
         .Q(reg_right_digit[6]),
         .R(1'b0));
-  LUT5 #(
-    .INIT(32'hFFFF0001)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFF00000001)) 
     s_clk_div_ce_i_1
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(ext_mux_rst),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(ext_mux_rst),
         .O(s_clk_div_ce_i_1_n_0));
   FDRE s_clk_div_ce_reg
        (.C(ext_mux_clk),
@@ -455,194 +460,244 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
   (* ADDER_THRESHOLD = "35" *) 
   CARRY4 s_clk_div_cnt0_carry__2
        (.CI(s_clk_div_cnt0_carry__1_n_0),
-        .CO({NLW_s_clk_div_cnt0_carry__2_CO_UNCONNECTED[3],s_clk_div_cnt0_carry__2_n_1,s_clk_div_cnt0_carry__2_n_2,s_clk_div_cnt0_carry__2_n_3}),
+        .CO({s_clk_div_cnt0_carry__2_n_0,s_clk_div_cnt0_carry__2_n_1,s_clk_div_cnt0_carry__2_n_2,s_clk_div_cnt0_carry__2_n_3}),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(data0[16:13]),
         .S(sel0[16:13]));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 s_clk_div_cnt0_carry__3
+       (.CI(s_clk_div_cnt0_carry__2_n_0),
+        .CO({NLW_s_clk_div_cnt0_carry__3_CO_UNCONNECTED[3:1],s_clk_div_cnt0_carry__3_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({NLW_s_clk_div_cnt0_carry__3_O_UNCONNECTED[3:2],data0[18:17]}),
+        .S({1'b0,1'b0,sel0[18:17]}));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \s_clk_div_cnt[0]_i_1 
        (.I0(sel0[0]),
         .O(s_clk_div_cnt[0]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[10]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[10]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[10]),
         .O(s_clk_div_cnt[10]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[11]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[11]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[11]),
         .O(s_clk_div_cnt[11]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[12]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[12]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[12]),
         .O(s_clk_div_cnt[12]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[13]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[13]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[13]),
         .O(s_clk_div_cnt[13]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[14]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[14]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[14]),
         .O(s_clk_div_cnt[14]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[15]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[15]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[15]),
         .O(s_clk_div_cnt[15]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[16]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[16]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[16]),
         .O(s_clk_div_cnt[16]));
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
+    \s_clk_div_cnt[17]_i_1 
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[17]),
+        .O(s_clk_div_cnt[17]));
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
+    \s_clk_div_cnt[18]_i_1 
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[18]),
+        .O(s_clk_div_cnt[18]));
   LUT4 #(
-    .INIT(16'hFFF7)) 
-    \s_clk_div_cnt[16]_i_2 
-       (.I0(sel0[4]),
-        .I1(sel0[3]),
-        .I2(sel0[6]),
-        .I3(sel0[5]),
-        .O(\s_clk_div_cnt[16]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT5 #(
-    .INIT(32'h7FFFFFFF)) 
-    \s_clk_div_cnt[16]_i_3 
-       (.I0(sel0[0]),
-        .I1(sel0[15]),
-        .I2(sel0[16]),
-        .I3(sel0[2]),
-        .I4(sel0[1]),
-        .O(\s_clk_div_cnt[16]_i_3_n_0 ));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \s_clk_div_cnt[16]_i_4 
-       (.I0(sel0[12]),
-        .I1(sel0[11]),
-        .I2(sel0[14]),
-        .I3(sel0[13]),
-        .O(\s_clk_div_cnt[16]_i_4_n_0 ));
+    .INIT(16'h7FFF)) 
+    \s_clk_div_cnt[18]_i_2 
+       (.I0(sel0[2]),
+        .I1(sel0[1]),
+        .I2(sel0[4]),
+        .I3(sel0[3]),
+        .O(\s_clk_div_cnt[18]_i_2_n_0 ));
   LUT4 #(
     .INIT(16'hDFFF)) 
-    \s_clk_div_cnt[16]_i_5 
-       (.I0(sel0[7]),
-        .I1(sel0[8]),
-        .I2(sel0[10]),
-        .I3(sel0[9]),
-        .O(\s_clk_div_cnt[16]_i_5_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+    \s_clk_div_cnt[18]_i_3 
+       (.I0(sel0[13]),
+        .I1(sel0[14]),
+        .I2(sel0[16]),
+        .I3(sel0[15]),
+        .O(\s_clk_div_cnt[18]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \s_clk_div_cnt[18]_i_4 
+       (.I0(sel0[18]),
+        .I1(sel0[17]),
+        .I2(sel0[0]),
+        .O(\s_clk_div_cnt[18]_i_4_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    \s_clk_div_cnt[18]_i_5 
+       (.I0(sel0[10]),
+        .I1(sel0[9]),
+        .I2(sel0[12]),
+        .I3(sel0[11]),
+        .O(\s_clk_div_cnt[18]_i_5_n_0 ));
+  LUT4 #(
+    .INIT(16'hFFEF)) 
+    \s_clk_div_cnt[18]_i_6 
+       (.I0(sel0[6]),
+        .I1(sel0[5]),
+        .I2(sel0[8]),
+        .I3(sel0[7]),
+        .O(\s_clk_div_cnt[18]_i_6_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[1]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[1]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[1]),
         .O(s_clk_div_cnt[1]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[2]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[2]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[2]),
         .O(s_clk_div_cnt[2]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[3]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[3]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[3]),
         .O(s_clk_div_cnt[3]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[4]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[4]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[4]),
         .O(s_clk_div_cnt[4]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[5]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[5]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[5]),
         .O(s_clk_div_cnt[5]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[6]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[6]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[6]),
         .O(s_clk_div_cnt[6]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[7]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[7]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[7]),
         .O(s_clk_div_cnt[7]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[8]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[8]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[8]),
         .O(s_clk_div_cnt[8]));
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFE00000000)) 
     \s_clk_div_cnt[9]_i_1 
-       (.I0(\s_clk_div_cnt[16]_i_2_n_0 ),
-        .I1(\s_clk_div_cnt[16]_i_3_n_0 ),
-        .I2(\s_clk_div_cnt[16]_i_4_n_0 ),
-        .I3(\s_clk_div_cnt[16]_i_5_n_0 ),
-        .I4(data0[9]),
+       (.I0(\s_clk_div_cnt[18]_i_2_n_0 ),
+        .I1(\s_clk_div_cnt[18]_i_3_n_0 ),
+        .I2(\s_clk_div_cnt[18]_i_4_n_0 ),
+        .I3(\s_clk_div_cnt[18]_i_5_n_0 ),
+        .I4(\s_clk_div_cnt[18]_i_6_n_0 ),
+        .I5(data0[9]),
         .O(s_clk_div_cnt[9]));
   FDRE \s_clk_div_cnt_reg[0] 
        (.C(ext_mux_clk),
@@ -691,6 +746,18 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .CE(1'b1),
         .D(s_clk_div_cnt[16]),
         .Q(sel0[16]),
+        .R(ext_mux_rst));
+  FDRE \s_clk_div_cnt_reg[17] 
+       (.C(ext_mux_clk),
+        .CE(1'b1),
+        .D(s_clk_div_cnt[17]),
+        .Q(sel0[17]),
+        .R(ext_mux_rst));
+  FDRE \s_clk_div_cnt_reg[18] 
+       (.C(ext_mux_clk),
+        .CE(1'b1),
+        .D(s_clk_div_cnt[18]),
+        .Q(sel0[18]),
         .R(ext_mux_rst));
   FDRE \s_clk_div_cnt_reg[1] 
        (.C(ext_mux_clk),
@@ -746,7 +813,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .D(s_clk_div_cnt[9]),
         .Q(sel0[9]),
         .R(ext_mux_rst));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \s_curr_disp[0]_i_1 
@@ -754,7 +821,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .I1(ssd_mux_o),
         .I2(reg_left_digit[0]),
         .O(\s_curr_disp[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \s_curr_disp[1]_i_1 
@@ -762,7 +829,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .I1(ssd_mux_o),
         .I2(reg_left_digit[1]),
         .O(\s_curr_disp[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \s_curr_disp[2]_i_1 
@@ -770,7 +837,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .I1(ssd_mux_o),
         .I2(reg_left_digit[2]),
         .O(\s_curr_disp[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \s_curr_disp[3]_i_1 
@@ -778,7 +845,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .I1(ssd_mux_o),
         .I2(reg_left_digit[3]),
         .O(\s_curr_disp[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \s_curr_disp[4]_i_1 
@@ -786,7 +853,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .I1(ssd_mux_o),
         .I2(reg_left_digit[4]),
         .O(\s_curr_disp[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \s_curr_disp[5]_i_1 
@@ -794,7 +861,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .I1(ssd_mux_o),
         .I2(reg_left_digit[5]),
         .O(\s_curr_disp[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \s_curr_disp[6]_i_1 
@@ -844,7 +911,7 @@ module system_20_MuxSSD_0_0_MuxSSD_v1_0
         .D(\s_curr_disp[6]_i_1_n_0 ),
         .Q(ssd_seg_o[6]),
         .R(ext_mux_rst));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT1 #(
     .INIT(2'h1)) 
     s_curr_sel_i_1

@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date             : Thu Dec 10 13:45:25 2020
-| Host             : l2study running 64-bit Ubuntu 18.04.5 LTS
+| Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date             : Thu Dec 10 19:17:04 2020
+| Host             : J1STUDY running 64-bit major release  (build 9200)
 | Command          : report_power -file system_20_wrapper_power_routed.rpt -pb system_20_wrapper_power_summary_routed.pb -rpx system_20_wrapper_power_routed.rpx
 | Design           : system_20_wrapper
 | Device           : xc7z020clg400-1
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.006 |        3 |       --- |             --- |
-| Slice Logic              |     0.002 |     6574 |       --- |             --- |
-|   LUT as Logic           |     0.001 |     2095 |     53200 |            3.94 |
-|   Register               |    <0.001 |     3177 |    106400 |            2.99 |
-|   CARRY4                 |    <0.001 |      139 |     13300 |            1.05 |
+| Slice Logic              |     0.002 |     6580 |       --- |             --- |
+|   LUT as Logic           |     0.001 |     2100 |     53200 |            3.95 |
+|   Register               |    <0.001 |     3179 |    106400 |            2.99 |
+|   CARRY4                 |    <0.001 |      140 |     13300 |            1.05 |
 |   LUT as Distributed RAM |    <0.001 |       16 |     17400 |            0.09 |
 |   LUT as Shift Register  |    <0.001 |       72 |     17400 |            0.41 |
 |   F7/F8 Muxes            |    <0.001 |       12 |     53200 |            0.02 |
 |   Others                 |     0.000 |      393 |       --- |             --- |
-| Signals                  |     0.002 |     4675 |       --- |             --- |
+| Signals                  |     0.002 |     4681 |       --- |             --- |
 | I/O                      |    <0.001 |       42 |       125 |           33.60 |
 | PS7                      |     1.399 |        1 |       --- |             --- |
 | Static Power             |     0.141 |          |           |                 |
