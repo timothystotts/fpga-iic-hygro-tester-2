@@ -3,6 +3,11 @@
 FPGA IIC HYGRO Tester Version 2
 by Timothy Stotts
 
+Note that this project is Version 2, and that it uses an older Xilinx toolchain.
+Version 2 targets a Digilent Zybo Z7-20 board wtih a Xilinx Zynq-7020 APSoC.
+Version 1 is posted at:
+[fpga-iic-hygro-tester-1](https://github.com/timothystotts/fpga-iic-hygro-tester-1)
+and targets a Digilent Arty A7-100 board with a Xilinx Artix-7 FPGA.
 
 ## Description
 A small FPGA project of different implementations for testing Temperature and Relative Humidity
